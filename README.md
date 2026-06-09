@@ -1,4 +1,4 @@
-# CI/CD Tools and Practices Final Project Template
+# CI/CD Tools and Practices Final Project
 
 This repository contains the template to be used for the Final Project for the Coursera course **CI/CD Tools and Practices**.
 
@@ -26,13 +26,12 @@ exit
 
 ## Tasks
 
-
 ## License
 
 Licensed under the Apache License. See [LICENSE](/LICENSE)
 
 ## Author
 
-Skills Network
+Võ Hồng Việt
 
-## <h3 align="center"> © IBM Corporation 2023. All rights reserved. <h3/>
+## `<h3 align="center">` © IBM Corporation 2023. All rights reserved. `<h3/>`
