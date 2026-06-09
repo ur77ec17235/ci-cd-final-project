@@ -1,37 +1,64 @@
-# CI/CD Tools and Practices Final Project
+# CI/CD Tools and Practices Final Project Template
 
-This repository contains the template to be used for the Final Project for the Coursera course **CI/CD Tools and Practices**.
+## Project name
+ci-cd-final-project
 
-## Usage
+## Overview
+This project is the final assignment for the **Continuous Integration and Continuous Delivery (CI/CD)** course.  
+The goal of this project is to build a complete CI/CD workflow for a Python microservice that provides a RESTful API for managing counters.
 
-This repository is to be used as a template to create your own repository in your own GitHub account. No need to Fork it as it has been set up as a Template. This will avoid confusion when making Pull Requests in the future.
+The project demonstrates how to:
+- automate code quality checks with **GitHub Actions**
+- automate testing with **nose**
+- create **Tekton tasks** for CI/CD in OpenShift
+- create an **OpenShift Pipeline** for linting, testing, building, and deploying the application
+- deploy the application to an OpenShift cluster
 
-From the GitHub **Code** page, press the green **Use this template** button to create your own repository from this template.
+---
 
-Name your repo: `ci-cd-final-project`.
+## Objectives completed
+The following objectives were implemented in this project:
 
-## Setup
+### 1. Continuous Integration with GitHub Actions
+A GitHub Actions workflow was created to automatically run when:
+- code is pushed to the `main` branch
+- a pull request is opened against the `main` branch
 
-After entering the lab environment you will need to run the `setup.sh` script in the `./bin` folder to install the prerequisite software.
+The workflow includes these steps:
+- **Checkout**
+- **Install dependencies**
+- **Lint with flake8**
+- **Run unit tests with nose**
 
-```bash
-bash bin/setup.sh
-```
+### 2. Continuous Delivery with OpenShift Pipelines
+Tekton tasks were created and applied to the OpenShift cluster:
+- **cleanup**
+- **nose**
 
-Then you must exit the shell and start a new one for the Python virtual environment to be activated.
+An OpenShift pipeline was created with the following stages:
+- cleanup
+- git clone
+- flake8 linting
+- nose unit tests
+- build image with buildah
+- deploy application to OpenShift
 
-```bash
-exit
-```
+### 3. Deployment
+The application is deployed automatically through the OpenShift pipeline using the OpenShift client task and the deployment command.
 
-## Tasks
+---
 
-## License
+## Project structure
+Important files used in this project:
 
-Licensed under the Apache License. See [LICENSE](/LICENSE)
-
-## Author
-
-Võ Hồng Việt
-
-## `<h3 align="center">` © IBM Corporation 2023. All rights reserved. `<h3/>`
+```text
+.
+├── .github/
+│   └── workflows/
+│       └── workflow.yml
+├── .tekton/
+│   └── tasks.yml
+├── app/
+├── tests/
+├── requirements.txt
+└── README.md
